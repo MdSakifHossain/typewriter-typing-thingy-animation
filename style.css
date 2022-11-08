@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+:root {
+--bgc:hsl(49, 37%, 94%);
+--typewriterSpeed:4s;
+--typewriterCharecters:18;
+
+}
+
+@font-face {
+	font-family:cbn;/*Give it any name u desire*/
+	src: url(cbn.ttf);
+}
+
+
+*{
+box-sizing:border-box;
+font-family:;
+}
+
+body {
+margin:0;
+font-family:;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+background:var(--bgc);
+}
+
+.subtitle {
+color:#000000;
+font-family:;
+font-size:0.8rem;
+font-weight:400;
+}
+
+h1 {
+position:relative;
+font-family:monospace;
+position:relative;
+width:max-content;
+}
+
+h1::before,
+h1::after {
+content:" ";
+position:absolute;
+top:0;
+right:0;
+bottom:0;
+left:0;
+}
+
+h1::before {
+background:var(--bgc);
+animation: 
+  typewriter var(--typewriterSpeed) steps(var(--typewriterCharecters)) 1s forwards;
+}
+
+h1::after {
+width:0.125em;
+background:#000000;
+animation: 
+  typewriter var(--typewriterSpeed) steps(var(--typewriterCharecters)) 1s forwards,
+  blink 800ms steps(var(--typewriterCharecters)) infinite;
+
+}
+
+@keyframes typewriter {
+  to {
+    left:100%;
+  }
+}
+
+@keyframes blink {
+  to {
+  background:transparent;
+  }
+}
